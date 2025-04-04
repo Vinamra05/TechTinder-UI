@@ -74,12 +74,12 @@ return (
 />
 
   <div className="flex max-h-[80vh]  justify-center  items-center md:p-2 bg-gray-100 dark:bg-gray-950">
-    <div className="w-full p-2 md:max-w-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg m-3 shadow-md">
+    <div className="w-full p-2 md:max-w-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg m-3 md:mt-5 md:mb-5 shadow-md">
       <h3 className="text-2xl text-center mb-2 font-bold dark:text-accent">
         Edit Profile
       </h3>
 
-      <form onSubmit={saveProfile} className="space-y-2  m-2">
+      <form onSubmit={saveProfile} className="space-y-2">
         {/* First Name */}
         <label htmlFor="firstName" className="block text-lg font-medium dark:text-violet-400">
           First Name

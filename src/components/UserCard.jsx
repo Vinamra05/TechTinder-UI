@@ -24,7 +24,7 @@ const UserCard = ({ user }) => {
 
   return (
     
-    <div className="w-[60%] sm:w-[50%] md:w-[80%] lg:w-[70%] xl:w-[25%] bg-gray-900 border border-gray-700 rounded-xl shadow-lg dark:bg-gray-900 dark:border-gray-700 transition-all hover:shadow-2xl flex flex-col justify-center items-center max-h-[70%] p-4 mr-3">
+    <div className="w-[70%] sm:w-[60%] md:w-[80%] lg:w-[70%] xl:w-[25%] bg-gray-900 border border-gray-700 rounded-xl shadow-lg dark:bg-gray-900 dark:border-gray-700 transition-all hover:shadow-2xl flex flex-col justify-center items-center max-h-[70%] p-5 mr-2">
   
       
         <figure>
@@ -43,17 +43,17 @@ const UserCard = ({ user }) => {
 
           {age && gender && (
             <p className="mt-2 inline-block px-3 py-1 text-sm font-semibold text-gray-300 bg-gray-800 rounded-full">
-             🎂 {age} | 🏳️ {gender}
+             🎂 {age} |  {gender}
             </p>
           )}
 
-          <p className="mt-3 mb-6 text-sm text-gray-400 italic">
+          <p className="mt-3 mb-5 text-sm text-gray-400 italic">
             {about || "This user hasn't added a bio yet."}
           </p>
 
           <div className="flex justify-around items-center gap-2 ">
             <button
-              className="px-4 py-2 text-sm font-medium text-white bg-cyan-500 rounded-lg shadow-md hover:bg-cyan-700 cursor-grab transition-all flex items-center gap-2"
+              className="px-3 py-2 text-sm font-medium text-white bg-cyan-500 rounded-lg shadow-md hover:bg-cyan-700 cursor-grab transition-all flex items-center gap-2 "
               onClick={() => handleSendRequest("ignored", user._id)}
             >
               <svg
@@ -74,7 +74,7 @@ const UserCard = ({ user }) => {
             </button>
 
             <button
-              className="px-4 py-2 text-sm font-medium text-white bg-violet-500 rounded-lg shadow-md hover:bg-violet-700 transition-all  cursor-grab flex items-center gap-2"
+              className="px-3 py-2 text-sm font-medium text-white bg-violet-500 rounded-lg shadow-md hover:bg-violet-700 transition-all  cursor-grab flex items-center gap-2"
               onClick={() => handleSendRequest("interested", user._id)}
             >
               <svg

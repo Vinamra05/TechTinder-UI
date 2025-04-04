@@ -4,6 +4,7 @@ import axios from "axios";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { BASE_URL } from "../utils/Constants";
+import {  toast } from "react-hot-toast";
 const Login = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -14,10 +15,11 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-   
+    setError("");
+  
     try {
-      const res = await  axios.post(
-        BASE_URL +"/login",
+      const res = await axios.post(
+        BASE_URL + "/login",
         {
           emailId,
           password,
@@ -26,19 +28,25 @@ const Login = () => {
           withCredentials: true,
         }
       );
+  
       setIsLoading(false);
       setPassword("");
       setEmailId("");
-      // console.log(res?.data);
+  
+      // Dispatch user data to Redux
       dispatch(addUser(res.data));
+  
+      // Show toast message
+      toast.success(`Hey👋 ${res?.data?.firstName || "User"}, Explore the app! 🚀`);
+  
+      // Navigate to home page
       navigate("/");
     } catch (err) {
-      setError(err?.response?.data || "Something went wrong");
       setIsLoading(false);
-      // console.log(err);
+      const errorMessage = err?.response?.data || "Something went wrong";
+      setError(errorMessage);
+      toast.error(errorMessage);
     }
-
-  
   };
 
   return (

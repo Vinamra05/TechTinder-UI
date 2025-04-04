@@ -4,14 +4,20 @@ import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/Constants";
 import { removeUser } from "../utils/userSlice";
 import axios from "axios";
-
+import toast from "react-hot-toast";
+// import ChangePasswordModal from "./ChangePassword";
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
   const handleLogout = async () => {
     try {
       await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
       dispatch(removeUser());
+      toast.success("Logged out successfully", {
+        position: "top-center",
+        duration: 1000,
+      });
       return navigate("/login");
     } catch (error) {
       console.log(error);
@@ -143,11 +149,17 @@ const Navbar = () => {
                   <Link to="/requests">Requests</Link>
                 </li>
                 <li>
+                  <Link to="/change-password">Change Password</Link>
+                </li>
+                <li>
                   <a onClick={handleLogout}>Logout</a>
                 </li>
               </ul>
             </div>
           )}
+          {/* {showChangePasswordModal && (
+        <ChangePasswordModal onClose={() => setShowChangePasswordModal(false)} />
+      )} */}
 
           {/* Mobile Hamburger Menu */}
           <div className="md:hidden relative">
@@ -188,6 +200,7 @@ const Navbar = () => {
                     <Link to="/requests" className="block py-2">
                       Requests
                     </Link>
+                    <Link to="/change-password">Change Password</Link>
                     <a onClick={handleLogout} className="block py-2">
                       Logout
                     </a>
