@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../utils/userSlice";
+import PasswordInput from "./PasswordInput";
 
 const ChangePassword = () => {
   const [oldPassword, setOldPassword] = useState("");
@@ -69,41 +70,48 @@ const dispatch = useDispatch();
         onSubmit={handleChangePassword}
         className="w-full max-w-md p-6 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md bg-white dark:bg-gray-900"
       >
+        <h2 className="text-xl text-center font-bold text-gray-900">
+            <span className="text-primary">tech</span>{" "}
+            <span className="text-accent">Tinder</span>
+          </h2>
         <h2 className="text-xl font-bold mb-4 text-center dark:text-white">
           Change Password
         </h2>
         <div className="mb-4">
-          <label className="block text-sm mb-1 dark:text-gray-300">
-            Old Password
+          <label className="block text-md mb-1 dark:text-gray-300">
+            Current Password
           </label>
-          <input
-            type="password"
-            className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:text-white"
-            value={oldPassword}
-            onChange={(e) => setOldPassword(e.target.value)}
-            required
-          />
+          <PasswordInput
+                type="password"
+                value={oldPassword}
+                required
+                placeholder={"Type your current password"}
+                onChange={(e) => setOldPassword(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+              />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1 dark:text-gray-300">
+          <label className="block text-md mb-1 dark:text-gray-300">
             New Password
           </label>
-          <input
-            type="password"
-            className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:text-white"
-            value={newPassword}
-            onChange={(e) => setNewPassword(e.target.value)}
-            required
-          />
+          <PasswordInput
+                type="password"
+                value={newPassword}
+                placeholder={"Type your new password"}
+                required
+                onChange={(e) => setNewPassword(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+              />
         </div>
         <div className="mb-4">
-          <label className="block text-sm mb-1 dark:text-gray-300">
+          <label className="block text-md mb-1 dark:text-gray-300">
             Confirm New Password
           </label>
           <input
             type="password"
-            className="w-full px-3 py-2 border rounded-lg dark:bg-gray-800 dark:text-white"
+            className="w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
             value={confirmPassword}
+            placeholder="Type your new password again"
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />

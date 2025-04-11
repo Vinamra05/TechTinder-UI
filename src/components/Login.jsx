@@ -5,6 +5,8 @@ import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { BASE_URL } from "../utils/Constants";
 import {  toast } from "react-hot-toast";
+import { playSound } from "../utils/soundPlayer";
+import PasswordInput from "./PasswordInput";
 const Login = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -34,10 +36,11 @@ const Login = () => {
       setEmailId("");
   
       // Dispatch user data to Redux
-      dispatch(addUser(res.data));
-  
+      dispatch(addUser(res?.data));
+      
       // Show toast message
       toast.success(`Hey👋 ${res?.data?.firstName || "User"}, Explore the app! 🚀`);
+      playSound("/login.mp3",0.5);
   
       // Navigate to home page
       navigate("/");
@@ -62,7 +65,7 @@ const Login = () => {
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
             Sign in
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-gray-600 mt-2 dark:text-gray-400">
             Enter your credentials to access your account
           </p>
         </div>
@@ -70,7 +73,7 @@ const Login = () => {
           <div className="space-y-2">
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              className="block text-md font-medium text-gray-700 dark:text-gray-300"
             >
               Email
             </label>
@@ -81,17 +84,17 @@ const Login = () => {
               placeholder="john@example.com"
               required
               onChange={(e) => setEmailId(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+              className="w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
           </div>
           <div className="space-y-2">
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              className="block text-md font-medium text-gray-700 dark:text-gray-300"
             >
               Password
             </label>
-            <input
+            <PasswordInput
               id="password"
               type="password"
               value={password}
@@ -100,14 +103,14 @@ const Login = () => {
               className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
             />
           </div>
-          <div className="text-right text-sm">
+          {/* <div className="text-right text-sm">
             <Link
               to="/forgot-password"
               className="text-primary underline-offset-4 hover:underline"
             >
               Forgot password?
             </Link>
-          </div>
+          </div> */}
           <p className="text-red-500">{error}</p>
           <button
             type="submit"

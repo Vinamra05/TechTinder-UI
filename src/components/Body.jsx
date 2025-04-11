@@ -26,7 +26,7 @@ const Body = () => {
 
 useEffect(() => {
   fetchUser();
-}, []); // ✅ Make sure no unnecessary state changes trigger it.
+}, []); 
 
 
   return (

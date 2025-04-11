@@ -5,11 +5,14 @@ import axios from "axios";
 import { BASE_URL } from "../utils/Constants";
 import { addRequest, removeRequest } from "../utils/requestSlice";
 import { Toaster,toast } from "react-hot-toast";
+import { playSound } from "../utils/soundPlayer";
+import "../index.css"; // Import your CSS file for animations
 const Requests = () => {
   const requests = useSelector((store) => store.requests);
   const dispatch = useDispatch();
 
   const reviewRequest = async (status, _id) => {
+    playSound("/click.mp3"); // Play sound on button click
     try {
       const res = await axios.post(
         BASE_URL + "/request/review/" + status + "/" + _id,
@@ -118,11 +121,11 @@ const Requests = () => {
           className="divide-y divide-gray-300 dark:divide-gray-700"
         >
           {requests.map((request, index) => (
-            <li key={index} className="py-4">
+            <li key={index} className="py-4 animate-fadeIn">
               <div className="flex items-center gap-4">
                 <img
                   className="w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600"
-                  src={request.fromUserId.photoUrl || "/default-profile.jpg"}
+                  src={request.fromUserId.photoUrl || "https://tse2.mm.bing.net/th?id=OIP.gWz-QI2hDDhQpDnBvMe_2wHaHj&pid=Api&P=0&h=240"}
                   alt={request.fromUserId.firstName}
                 />
 
@@ -135,7 +138,7 @@ const Requests = () => {
                     {request.fromUserId.age} • {request.fromUserId.gender}
                   </p>
 
-                  <p className="mt-1 text-sm text-gray-500 dark:text-white text-start">
+                  <p className="mt-1 text-sm hidden md:block text-gray-500 dark:text-white text-start">
                     {request.fromUserId.about}
                   </p>
                 </div>

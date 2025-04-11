@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   const handleLogout = async () => {
     try {
       await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
@@ -120,8 +120,8 @@ const Navbar = () => {
           {/* Desktop Profile Dropdown */}
           {user && (
             <div className="hidden md:flex dropdown dropdown-end mx-7 items-center gap-3 relative">
-              <p className="text-lg font-medium bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">
-                Welcome, {user.firstName}
+              <p className="text-lg font-semibold bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500 text-transparent bg-clip-text tracking-wide animate-pulse drop-shadow-md">
+              ⚡Welcome {user.firstName}, glad you’re here!
               </p>
 
               <div
@@ -163,15 +163,112 @@ const Navbar = () => {
 
           {/* Mobile Hamburger Menu */}
           <div className="md:hidden relative">
-            <button
-              onClick={toggleMobileMenu}
-              className="hamburger text-4xl p-2"
-            >
-              ☰
-            </button>
-            {isMobileMenuOpen && (
+            {user ? (
+              <>
+                <img
+                  src={
+                    user.photoUrl ||
+                    "https://tse2.mm.bing.net/th?id=OIP.cjKYIzYOViaYl4E6Pb2ZtgHaHa&pid=Api&P=0&h=260"
+                  }
+                  alt="Profile"
+                  onClick={toggleMobileMenu}
+                  className="md:hidden w-10 h-10 mr-4 rounded-full border cursor-pointer"
+                />
+
+                {isMobileMenuOpen && (
+                  <div className="mobile-menu absolute top-16 right-4 bg-base-100 shadow-md rounded-lg p-4 w-48 z-50">
+                    <div className="mb-3 text-center">
+                      <p className="text-base font-semibold bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500 text-transparent bg-clip-text text-center tracking-wide drop-shadow-md animate-pulse">
+                      ⚡Welcome {user.firstName}, glad you’re here!
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <span className="text-sm font-medium">
+                        {theme === "light" ? "Light Mode" : "Dark Mode"}
+                      </span>
+                      <button
+                        onClick={toggleTheme}
+                        className="relative flex h-6 w-12 items-center rounded-full bg-gray-300 dark:bg-gray-600 p-1 transition-all duration-300"
+                      >
+                        <span
+                          className={`absolute left-1 flex h-4 w-4 items-center justify-center rounded-full bg-white shadow-md transition-all duration-300 ${
+                            theme === "dark"
+                              ? "translate-x-6 bg-yellow-400"
+                              : ""
+                          }`}
+                        >
+                          {theme === "dark" ? "🌙" : "☀️"}
+                        </span>
+                      </button>
+                    </div>
+
+                    <hr className="my-2" />
+
+                    <Link to="/profile" className="block py-2">
+                      Profile
+                    </Link>
+                    <Link to="/Connections" className="block py-2">
+                      Connections
+                    </Link>
+                    <Link to="/requests" className="block py-2">
+                      Requests
+                    </Link>
+                    <Link to="/change-password" className="block py-2">
+                      Change Password
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="block py-2 w-full text-left"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={toggleMobileMenu}
+                  className="hamburger text-4xl p-2 md:hidden"
+                >
+                  ☰
+                </button>
+
+                {isMobileMenuOpen && (
+                  <div className="mobile-menu absolute top-16 right-4 bg-base-100 shadow-md rounded-lg p-4 w-48 z-50">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-sm font-medium">
+                        {theme === "light" ? "Light Mode" : "Dark Mode"}
+                      </span>
+                      <button
+                        onClick={toggleTheme}
+                        className="relative flex h-6 w-12 items-center rounded-full bg-gray-300 dark:bg-gray-600 p-1 transition-all duration-300"
+                      >
+                        <span
+                          className={`absolute left-1 flex h-4 w-4 items-center justify-center rounded-full bg-white shadow-md transition-all duration-300 ${
+                            theme === "dark"
+                              ? "translate-x-6 bg-yellow-400"
+                              : ""
+                          }`}
+                        >
+                          {theme === "dark" ? "🌙" : "☀️"}
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </>
+            )}
+
+            {/* {isMobileMenuOpen && (
               <div className="mobile-menu absolute top-16 right-4 bg-base-100 shadow-md rounded-lg p-4 w-48 z-50">
-                <div className="flex items-center gap-2">
+                <div className="mb-3 text-center">
+                  <p className="text-base font-semibold bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500 text-transparent bg-clip-text text-center tracking-wide drop-shadow-md animate-bounce">
+                    Welcome, {user.firstName} 👋
+                  </p>
+                </div>
+                <div className="flex items-center justify-between gap-2">
                   <span className="text-sm font-medium">
                     {theme === "light" ? "Light Mode" : "Dark Mode"}
                   </span>
@@ -188,7 +285,9 @@ const Navbar = () => {
                     </span>
                   </button>
                 </div>
+
                 <hr className="my-2" />
+
                 {user && (
                   <>
                     <Link to="/profile" className="block py-2">
@@ -200,14 +299,19 @@ const Navbar = () => {
                     <Link to="/requests" className="block py-2">
                       Requests
                     </Link>
-                    <Link to="/change-password">Change Password</Link>
-                    <a onClick={handleLogout} className="block py-2">
+                    <Link to="/change-password" className="block py-2">
+                      Change Password
+                    </Link>
+                    <a
+                      onClick={handleLogout}
+                      className="block py-2 cursor-pointer"
+                    >
                       Logout
                     </a>
                   </>
                 )}
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>

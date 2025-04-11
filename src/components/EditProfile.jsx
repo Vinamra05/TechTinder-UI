@@ -74,7 +74,7 @@ return (
 />
 
   <div className="flex max-h-[80vh]  justify-center  items-center md:p-2 bg-gray-100 dark:bg-gray-950">
-    <div className="w-full p-2 md:max-w-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg m-3 md:mt-5 md:mb-5 shadow-md">
+    <div className=" w-full p-2 md:max-w-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg m-3 md:mt-5 md:mb-5 shadow-md">
       <h3 className="text-2xl text-center mb-2 font-bold dark:text-accent">
         Edit Profile
       </h3>
@@ -175,7 +175,7 @@ return (
       </form>
     </div>
 
-    <UserCard user={{ firstName, lastName, photoUrl, age, gender, about }} />
+    <UserCard user={{ firstName, lastName, photoUrl, age, gender, about } } variant="edit" />
   </div>
   </>
 );

@@ -3,6 +3,7 @@ import { BASE_URL } from "../utils/Constants.js";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnection } from "../utils/connectionSlice.js";
+import "../index.css"; // Import your CSS file for animations
 
 const Connections = () => {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ const Connections = () => {
     );
 
   return (
-    <div className="flex justify-center p-6">
+    <div className="flex justify-center p-6 ">
       <div className="w-full max-w-lg p-6 bg-white border border-gray-300 rounded-lg shadow-lg dark:bg-gray-900 dark:border-gray-700">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
@@ -69,7 +70,7 @@ const Connections = () => {
         >
           <ul role="list" className="divide-y divide-gray-300 dark:divide-gray-700">
             {(showAll ? connections : connections.slice(0, 5)).map((connection, index) => (
-              <li key={index} className="py-4">
+              <li key={index} className="py-4 animate-fadeIn">
                 <div className="flex items-center gap-4">
                   {/* Profile Image */}
                   <img
