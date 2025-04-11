@@ -109,7 +109,7 @@ const dispatch = useDispatch();
           </label>
           <input
             type="password"
-            className="w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+            className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
             value={confirmPassword}
             placeholder="Type your new password again"
             onChange={(e) => setConfirmPassword(e.target.value)}

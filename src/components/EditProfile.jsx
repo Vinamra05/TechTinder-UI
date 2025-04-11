@@ -74,8 +74,8 @@ return (
 />
 
   <div className="flex max-h-[80vh]  justify-center  items-center md:p-2 bg-gray-100 dark:bg-gray-950">
-    <div className=" w-full p-2 md:max-w-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg m-3 md:mt-5 md:mb-5 shadow-md">
-      <h3 className="text-2xl text-center mb-2 font-bold dark:text-accent">
+    <div className=" w-full p-2 md:max-w-md bg-white dark:bg-gray-900 border-2 border-secondary rounded-lg m-3 md:mt-5 md:mb-5 shadow-md">
+      <h3 className="text-2xl text-center mb-2 font-bold dark:text-fuchsia-700  underline">
         Edit Profile
       </h3>
 
@@ -90,7 +90,7 @@ return (
           value={firstName}
           required
           onChange={(e) => setFirstName(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+          className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         />
 
         {/* Last Name */}
@@ -103,7 +103,7 @@ return (
           value={lastName}
           required
           onChange={(e) => setLastName(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+          className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         />
 
         {/* Photo URL */}
@@ -116,7 +116,7 @@ return (
           value={photoUrl}
           required
           onChange={(e) => setPhotoUrl(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+          className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         />
 
         {/* Gender Dropdown */}
@@ -128,7 +128,7 @@ return (
           value={gender}
           required
           onChange={(e) => setGender(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+         className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         >
           <option value="">Select Gender</option>
           <option value="Male">Male</option>
@@ -146,7 +146,7 @@ return (
           value={age}
           required
           onChange={(e) => setAge(e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+          className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         />
 
         {/* About (Textarea) */}
@@ -159,7 +159,7 @@ return (
           required
           onChange={(e) => setAbout(e.target.value)}
           rows="3"
-          className="w-full px-3 py-2 max-h-10 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+         className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500  h-12    border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         ></textarea>
 
         <p className="text-red-500">{error}</p>

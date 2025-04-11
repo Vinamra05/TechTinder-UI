@@ -84,7 +84,7 @@ const Login = () => {
               placeholder="john@example.com"
               required
               onChange={(e) => setEmailId(e.target.value)}
-              className="w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+              className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
           </div>
           <div className="space-y-2">
@@ -100,7 +100,7 @@ const Login = () => {
               value={password}
               required
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white text-gray-900 dark:bg-gray-800 dark:text-white"
+              className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
           </div>
           {/* <div className="text-right text-sm">

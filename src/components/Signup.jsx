@@ -72,7 +72,7 @@ const Signup = () => {
                 required
                 placeholder="Your First Name"
                 onChange={(e) => setFirstName(e.target.value)}
-                className="  placeholder:text-sm sm:placeholder:text-base md:placeholder:text-md     w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+                className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
               />
             </div>
 
@@ -86,7 +86,7 @@ const Signup = () => {
                 required
                 placeholder="Your Last Name"
                 onChange={(e) => setLastName(e.target.value)}
-                className="    placeholder:text-sm sm:placeholder:text-base md:placeholder:text-md   w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+                className="  w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
               />
             </div>
           </div>
@@ -103,7 +103,7 @@ const Signup = () => {
                 max="100"
                 placeholder="Enter your Age..."
                 onChange={(e) => setAge(e.target.value)}
-                className="w-full px-3 py-2 border   rounded-md  shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500   text-gray-900  dark:text-white"
+                className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
               />
             </div>
 
@@ -135,7 +135,7 @@ const Signup = () => {
                 placeholder="Enter your Email"
                 required
                 onChange={(e) => setEmailId(e.target.value)}
-                className="placeholder:text-sm sm:placeholder:text-base md:placeholder:text-md w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+                className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
               />
             </div>
 
@@ -161,7 +161,7 @@ const Signup = () => {
               value={photoUrl}
               placeholder="https://example.com/photo.jpg"
               onChange={(e) => setPhotoUrl(e.target.value)}
-              className="w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+              className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
           </div>
           <div>
@@ -173,7 +173,7 @@ const Signup = () => {
               value={skills}
               placeholder="React, Node.js, Python"
               onChange={(e) => setSkills(e.target.value)}
-              className="w-full px-4 py-2 pr-10 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+              className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
             />
           </div>
           <div>
@@ -185,7 +185,7 @@ const Signup = () => {
               required
               placeholder="Tell us something about yourself..."
               onChange={(e) => setAbout(e.target.value)}
-              className="w-full px-3 py-2 border  rounded-md text-gray-900  dark:text-white   shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500 resize-none h-10"
+              className="w-full px-4 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500 resize-none h-12"
             ></textarea>
           </div>
 

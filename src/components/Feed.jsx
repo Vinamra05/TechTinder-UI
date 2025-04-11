@@ -109,26 +109,32 @@ const Feed = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center p-6">
-      {/* Skill Filter UI */}
-      <div className="flex flex-col md:flex-row items-center justify-center  gap-2 mb-3">
-        <input
-          type="text"
-          placeholder="Enter Skills to Filter the Users..."
-          value={skillFilter}
-          onChange={(e) => setSkillFilter(e.target.value)}
-          className=" px-4 py-2 pr-10 border-primary rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500  input  w-80"
-        />
-        <button onClick={handleFilter} className="  btn btn-primary">
-          Filter
-        </button>
-      </div>
-
-      {/* User Card */}
-      <div key={animationKey} className="fade-in-up w-full flex justify-center">
-        <UserCard user={currentUser} onSwipe={handleSwipe} variant="feed" />
-      </div>
+    <div className="flex flex-col items-center justify-start px-4 pt-20 min-h-screen pb-24">
+  {/* Filter */}
+  <div className="w-full max-w-xl fixed top-[72px] z-10  backdrop-blur-lg rounded-md shadow px-4 py-3">
+    <div className="flex items-center gap-3">
+      <input
+        type="text"
+        placeholder="Enter Skills to Filter the Users..."
+        value={skillFilter}
+        onChange={(e) => setSkillFilter(e.target.value)}
+        className="flex-1 input border-purple-500 w-full rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+      />
+      <button onClick={handleFilter} className="btn btn-accent">
+        Filter
+      </button>
     </div>
+    
+
+  <hr className=" mt-3 h-[2px] border-0 bg-gradient-to-r  from-purple-400 via-pink-500 to-red-400 dark:from-purple-600 dark:via-pink-600 dark:to-red-500" />
+  </div>
+  {/* User Cards */}
+  <div key={animationKey} className="mt-4 fade-in-up w-full flex justify-center">
+    
+    <UserCard user={currentUser} onSwipe={handleSwipe} variant="feed" />
+  </div>
+</div>
+   
   );
 };
 
