@@ -46,7 +46,7 @@ const Connections = () => {
 
   return (
     <div className="flex justify-center p-6 ">
-      <div className="w-full max-w-lg p-6 bg-white border border-gray-300 rounded-lg shadow-lg dark:bg-gray-900 dark:border-gray-700">
+      <div className="w-full max-w-lg p-6 bg-white border-2 border-accent rounded-lg shadow-lg dark:bg-gray-900 ">
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <h5 className="text-2xl font-bold dark:text-accent">Your Connections</h5>

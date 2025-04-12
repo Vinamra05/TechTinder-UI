@@ -79,7 +79,7 @@ return (
         Edit Profile
       </h3>
 
-      <form onSubmit={saveProfile} className="space-y-2">
+      <form onSubmit={saveProfile} className="space-y-1 md:space-y-2">
         {/* First Name */}
         <label htmlFor="firstName" className="block text-lg font-medium dark:text-violet-400">
           First Name
@@ -90,7 +90,7 @@ return (
           value={firstName}
           required
           onChange={(e) => setFirstName(e.target.value)}
-          className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
+          className="  w-full px-3 py-2  border  h-7 md:h-10  text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         />
 
         {/* Last Name */}
@@ -103,7 +103,7 @@ return (
           value={lastName}
           required
           onChange={(e) => setLastName(e.target.value)}
-          className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
+          className="  w-full px-3 py-2  border  h-7 md:h-10    text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         />
 
         {/* Photo URL */}
@@ -116,7 +116,7 @@ return (
           value={photoUrl}
           required
           onChange={(e) => setPhotoUrl(e.target.value)}
-          className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
+          className="  w-full px-3 py-2   border h-7 md:h-10  text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         />
 
         {/* Gender Dropdown */}
@@ -128,7 +128,7 @@ return (
           value={gender}
           required
           onChange={(e) => setGender(e.target.value)}
-         className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
+         className="  w-full px-3 py-2  border h-9 md:h-10  text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         >
           <option value="">Select Gender</option>
           <option value="Male">Male</option>
@@ -146,7 +146,7 @@ return (
           value={age}
           required
           onChange={(e) => setAge(e.target.value)}
-          className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500      border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
+          className="  w-full px-3 py-2  border   h-7 md:h-11   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500    border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         />
 
         {/* About (Textarea) */}
@@ -159,7 +159,7 @@ return (
           required
           onChange={(e) => setAbout(e.target.value)}
           rows="3"
-         className="  w-full px-3 py-2 pr-10 border   text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500  h-12    border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
+         className="  w-full px-3 py-2  border h-9 md:h-12  text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-violet-500     border-gray-300 dark:border-gray-700  bg-white  dark:bg-gray-800 "
         ></textarea>
 
         <p className="text-red-500">{error}</p>

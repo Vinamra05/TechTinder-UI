@@ -22,7 +22,7 @@ const Requests = () => {
     //   console.log("fucntion called", res);
     // console.log(requests.fromUserId.firstName);
     if(status=="accepted"){
-     toast.success("Amazing!! New Connection Added to Your Connections...", {
+     toast.success("Amazing! You've made a new connection. 🎉", {
               position: "top-center",
               duration: 3000,
             });

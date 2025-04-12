@@ -100,10 +100,14 @@ const UserCard = ({ user, onSwipe, variant = "feed" }) => {
         </p>
 
         <div className="flex justify-around items-center gap-1 md:gap-2">
-          <button
-            className="px-2 md:px-3 py-2 text-sm font-medium text-white bg-cyan-500 rounded-lg shadow-md hover:bg-cyan-700 cursor-grab transition-all flex items-center gap-1 md:gap-2"
-            onClick={() => handleSendRequest("ignored", user._id)}
-          >
+        <button
+    disabled={variant === "edit"}
+    className={` ${
+      variant === "edit"
+        ? "bg-green-500 cursor-not-allowed px-2 md:px-3 py-2 text-sm font-medium text-white rounded-lg shadow-md transition-all  flex items-center gap-1 md:gap-2 hover:bg-green-700"
+        : " px-2 md:px-3 py-2 text-sm font-medium rounded-lg shadow-md text-white  transition-all cursor-grab flex items-center gap-1 md:gap-2 bg-green-500  hover:bg-green-600"
+    }`}
+  >
             <svg
               className="w-4 h-4"
               xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +126,8 @@ const UserCard = ({ user, onSwipe, variant = "feed" }) => {
           </button>
 
           <button
-            className="px-2 md:px-3 py-2 8text-sm font-medium text-white bg-violet-500 rounded-lg shadow-md hover:bg-violet-700 transition-all cursor-grab flex items-center gap-1 md:gap-2"
+          disabled={variant === "edit"}
+            className= {`${ variant === "edit" ? "px-2 md:px-3 py-2 text-sm font-medium text-white bg-violet-500 rounded-lg shadow-md hover:bg-violet-700 cursor-not-allowed transition-all  flex items-center gap-1 md:gap-2" : "px-2 md:px-3 py-2 text-sm font-medium text-white bg-violet-500 rounded-lg shadow-md hover:bg-violet-700 transition-all cursor-grab flex items-center gap-1 md:gap-2"}`}
             onClick={() => handleSendRequest("interested", user._id)}
           >
             <svg

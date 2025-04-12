@@ -56,7 +56,7 @@ const Login = () => {
     <div className="flex min-h-[80vh] flex-col items-center justify-center p-4 md:p-8 bg-gray-100 dark:bg-gray-950">
      
 
-      <div className="w-full max-w-md p-6 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg shadow-md">
+      <div className="w-full max-w-md p-6 bg-white dark:bg-gray-900 border-2 border-cyan-500 rounded-lg shadow-md">
         <div className="text-center mb-4">
           <h2 className="text-xl font-bold text-gray-900">
             <span className="text-primary">tech</span>{" "}
@@ -73,7 +73,7 @@ const Login = () => {
           <div className="space-y-2">
             <label
               htmlFor="email"
-              className="block text-md font-medium text-gray-700 dark:text-gray-300"
+              className="block text-md font-medium text-primary "
             >
               Email
             </label>
@@ -90,7 +90,7 @@ const Login = () => {
           <div className="space-y-2">
             <label
               htmlFor="password"
-              className="block text-md font-medium text-gray-700 dark:text-gray-300"
+              className="block text-md font-medium text-accent"
             >
               Password
             </label>
@@ -114,7 +114,7 @@ const Login = () => {
           <p className="text-red-500">{error}</p>
           <button
             type="submit"
-            className="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition disabled:opacity-50"
+            className="w-full bg-primary text-white py-2 rounded-lg hover:bg-opacity-90 transition disabled:opacity-50 cursor-pointer"
             disabled={isLoading}
           >
             {isLoading ? "Signing in..." : "Sign in"}

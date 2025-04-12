@@ -49,7 +49,7 @@ const Signup = () => {
   return (
     <div className="min-h-screen overflow-auto p-4 bg-gray-100 dark:bg-gray-950">
     <div className="flex max-h-[80vh] flex-col items-center justify-center p-3 md:p-4 bg-gray-100 dark:bg-gray-950">
-      <div className="w-full max-w-md p-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-800 rounded-lg shadow-md">
+      <div className="w-full max-w-md p-3 bg-white dark:bg-gray-900 border-2 border-primary  rounded-lg shadow-md">
         <div className="text-center  md:mb-0 mb-3">
           <h2 className="text-xl font-bold text-gray-900">
             <span className="text-primary">tech</span> <span className="text-accent">Tinder</span>

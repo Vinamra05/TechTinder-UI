@@ -65,10 +65,10 @@ const dispatch = useDispatch();
   
 
   return (
-    <div className="min-h-[60vh] flex items-center justify-center p-6">
+    <div className="min-h-[60vh] flex  items-center justify-center p-6">
       <form
         onSubmit={handleChangePassword}
-        className="w-full max-w-md p-6 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md bg-white dark:bg-gray-900"
+        className="w-full max-w-md p-6 border-2 border-primary  rounded-lg shadow-md bg-white dark:bg-gray-900"
       >
         <h2 className="text-xl text-center font-bold text-gray-900">
             <span className="text-primary">tech</span>{" "}
