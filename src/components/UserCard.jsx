@@ -55,7 +55,7 @@ const UserCard = ({ user, onSwipe, variant = "feed" }) => {
   
     // 👉 Play different sound based on status
     const soundToPlay = status === "ignored" ? IGNORE_SOUND : INTERESTED_SOUND;
-    playSound(soundToPlay, 0.9);
+    playSound(soundToPlay, 0.8);
   
     setTimeout(async () => {
       try {

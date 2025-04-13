@@ -79,7 +79,7 @@ return (
         Edit Profile
       </h3>
 
-      <form onSubmit={saveProfile} className="space-y-1 md:space-y-2">
+      <form onSubmit={saveProfile} className="space-y-1">
         {/* First Name */}
         <label htmlFor="firstName" className="block text-lg font-medium dark:text-violet-400">
           First Name
