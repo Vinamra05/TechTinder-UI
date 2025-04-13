@@ -184,10 +184,3 @@ return (
 
 export default EditProfile;
 
-
-//gender mei male or female or  other teen option add krne hai error aye to bs male or female as a dropdown karna hai kal ka first task 
-
-
-// profile update hone ke baad toast bhi dikhana hai ki profile updated successfully position top center
-
-//about section ke liye textarea use karna hai input ko change karke textarea karna hai

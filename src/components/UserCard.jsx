@@ -107,6 +107,7 @@ const UserCard = ({ user, onSwipe, variant = "feed" }) => {
         ? "bg-green-500 cursor-not-allowed px-2 md:px-3 py-2 text-sm font-medium text-white rounded-lg shadow-md transition-all  flex items-center gap-1 md:gap-2 hover:bg-green-700"
         : " px-2 md:px-3 py-2 text-sm font-medium rounded-lg shadow-md text-white  transition-all cursor-grab flex items-center gap-1 md:gap-2 bg-green-500  hover:bg-green-600"
     }`}
+    onClick={() => handleSendRequest("ignored", user._id)}
   >
             <svg
               className="w-4 h-4"
