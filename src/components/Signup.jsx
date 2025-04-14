@@ -48,19 +48,19 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen overflow-auto p-4 bg-gray-100 dark:bg-gray-950">
-    <div className="flex max-h-[80vh] flex-col items-center justify-center p-3 md:p-4 bg-gray-100 dark:bg-gray-950">
+    <div className="flex max-h-[80vh]  flex-col items-center justify-center p-3 md:p-4 bg-gray-100 dark:bg-gray-950">
       <div className="w-full max-w-md p-3 bg-white dark:bg-gray-900 border-2 border-primary  rounded-lg shadow-md">
-        <div className="text-center  md:mb-0 mb-3">
+        <div className="text-center  md:mb-0 mb-2">
           <h2 className="text-xl font-bold text-gray-900">
             <span className="text-primary">tech</span> <span className="text-accent">Tinder</span>
           </h2>
           <h3 className="text-xl font-bold text-gray-900 dark:text-white">Create Account</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
             Sign up to find and connect with developers..
           </p>
         </div>
 
-        <form onSubmit={handleSignup} className="space-y-5 md:space-y-3 ">
+        <form onSubmit={handleSignup} className="space-y-1 md:space-y-2">  
           <div className="flex flex-row md:flex-row space-x-3 md:space-x-3">
             <div className="w-1/2 md:w-1/2">
               <label className="block text-sm font-semibold  md:mb-0 mb-2 text-gray-700 dark:text-gray-300">

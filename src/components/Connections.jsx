@@ -48,7 +48,7 @@ const Connections = () => {
     <div className="flex justify-center p-6 ">
       <div className="w-full max-w-lg p-6 bg-white border-2 border-accent rounded-lg shadow-lg dark:bg-gray-900 ">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-2">
           <h5 className="text-2xl font-bold dark:text-accent">Your Connections</h5>
 
           {connections.length > 5 && (
@@ -60,13 +60,13 @@ const Connections = () => {
             </button>
           )}
         </div>
-
+        
         {/* Connection List with Scroll or View All */}
         <div
           className={`overflow-y-auto ${
-            connections.length > 5 ? "max-h-[500px]" : "max-h-auto"
+            connections.length > 5 ? "max-h-[465px]" : "max-h-auto"
           } custom-scrollbar`} // Increased height for better visibility
-          style={{ paddingBottom: "10px" }} // Adds extra padding to prevent cutoff
+          style={{ paddingBottom: "20px" }} // Adds extra padding to prevent cutoff
         >
           <ul role="list" className="divide-y divide-gray-300 dark:divide-gray-700">
             {(showAll ? connections : connections.slice(0, 5)).map((connection, index) => (
