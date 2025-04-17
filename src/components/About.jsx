@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+    const navigate = useNavigate();
   return (
     <div className="px-6 py-10 md:px-20 lg:px-40 text-gray transition-colors duration-300">
       <h1 className="text-3xl font-bold mb-6 text-primary">About TechTinder</h1>
@@ -77,6 +79,18 @@ const About = () => {
       <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-10">
         Built with ❤️, caffeine, and JavaScript. All rights reserved © {new Date().getFullYear()} TechTinder.
       </p>
+
+
+      
+      <div className="mt-7">
+        <button
+          onClick={() => navigate('/')}
+          className="px-4 py-2 bg-purple-500 cursor-pointer text-white rounded-md hover:bg-purple-700 transition-all"
+        >
+          ⬅️ Back to Home
+        </button>
+    
+      </div>
     </div>
   );
 };

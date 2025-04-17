@@ -65,7 +65,7 @@ const dispatch = useDispatch();
   
 
   return (
-    <div className="min-h-[60vh] flex  items-center justify-center p-6">
+    <div className="min-h-[80vh] flex  items-center justify-center p-6">
       <form
         onSubmit={handleChangePassword}
         className="w-full max-w-md p-6 border-2 border-primary  rounded-lg shadow-md bg-white dark:bg-gray-900"

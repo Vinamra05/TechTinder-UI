@@ -7,6 +7,7 @@ import { BASE_URL } from "../utils/Constants";
 import {  toast } from "react-hot-toast";
 import { playSound } from "../utils/soundPlayer";
 import PasswordInput from "./PasswordInput";
+
 const Login = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -56,7 +57,7 @@ const Login = () => {
     <div className="flex min-h-[80vh] flex-col items-center justify-center p-4 md:p-8 bg-gray-100 dark:bg-gray-950">
       <div className="flex flex-col items-center justify-center text-center mb-4">
         <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-          Welcome to techTinder 
+          Welcome to techTinder   
         </h1>
         <p className="text-gray-600 mt-4">
           Connect with friends and the world around you on our platform.

@@ -71,7 +71,7 @@ const UserCard = ({ user, onSwipe, variant = "feed" }) => {
   return (
     <div
       ref={cardRef}
-      className={`${widthClasses}  shadow-lg  dark:bg-gray-900  transition-all hover:shadow-2xl flex flex-col justify-center items-center max-h-[70%] p-6 mr-2 border-3 border-purple-600 rounded-xl`}
+      className={`${widthClasses}  shadow-lg  dark:bg-gray-900  transition-all hover:shadow-2xl flex flex-col justify-center items-center max-h-[90%] p-6 mr-2 border-3 border-purple-600 rounded-xl`}
     >
       <figure>
         <img

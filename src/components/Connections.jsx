@@ -30,7 +30,7 @@ const Connections = () => {
 
   if (connections?.length === 0)
     return (
-      <div className="flex flex-col items-center justify-center text-center mt-10">
+      <div className="flex flex-col  min-h-[75vh]  items-center justify-center text-center mt-10">
         <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
           No Connection Requests Found
         </h1>
