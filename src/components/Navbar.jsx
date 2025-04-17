@@ -5,7 +5,6 @@ import { BASE_URL } from "../utils/Constants";
 import { removeUser } from "../utils/userSlice";
 import axios from "axios";
 import toast from "react-hot-toast";
-// import ChangePasswordModal from "./ChangePassword";
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

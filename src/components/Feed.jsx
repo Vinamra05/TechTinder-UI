@@ -97,7 +97,7 @@ const Feed = () => {
 
   if (!currentFeed?.length) {
     return (
-      <div className="flex flex-col items-center justify-center h-[60vh] text-center">
+      <div className="flex flex-col items-center justify-center h-[80vh] text-center">
         <h1 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
           🚀 Your Feed is Up-to-Date!
         </h1>

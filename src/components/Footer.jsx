@@ -1,8 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-300 text-base-content p-4 text-center fixed bottom-0 shadow-md w-full mt-auto">
+    <footer className="bg-base-300 text-base-content p-4 text-center shadow-md w-full mt-auto">
+      <div className="flex flex-wrap justify-center gap-4 items-center mb-2">
+    <Link to="/privacy-policy" className="text-md font-medium hover:opacity-80 transition duration-300">
+      Privacy Policy
+    </Link>
+    <Link to="/terms" className="text-md font-medium hover:opacity-80 transition duration-300">
+      Terms & Conditions
+    </Link>
+    <Link to="/about" className="text-md font-medium hover:opacity-80 transition duration-300">
+      About
+    </Link>
+  </div>
+
       <div className="flex flex-col items-center gap-2">
         
        

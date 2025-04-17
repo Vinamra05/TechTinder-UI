@@ -11,6 +11,9 @@ import Requests from "./Requests";
 import Signup from "./Signup";
 import ChangePassword from "./ChangePassword";
 import { Toaster } from "react-hot-toast";
+import Privacy from "./Privacy";
+import Terms from "./Terms";
+import About from "./About";
 function App() {
   return (
     <>
@@ -60,6 +63,10 @@ function App() {
               <Route path="/requests" element={<Requests />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/change-password" element={<ChangePassword />} />
+              <Route path="/privacy-policy" element={<Privacy />} />
+              <Route path="/privacy-policy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/about" element={<About />} />
             </Route>
           </Routes>
         </BrowserRouter>  

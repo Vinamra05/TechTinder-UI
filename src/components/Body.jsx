@@ -32,6 +32,7 @@ useEffect(() => {
   return (
     <div>
       <Navbar />
+      
       <Outlet />
       <Footer />
     </div>
