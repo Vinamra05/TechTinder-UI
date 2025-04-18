@@ -80,7 +80,7 @@ const Feed = () => {
 
   if (filterExhausted && skillFilter.trim()) {
     return (
-      <div className="flex flex-col items-center justify-center h-[60vh] text-center">
+      <div className="flex flex-col items-center justify-center min-h-[75vh] text-center">
         <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-500 mb-4">
           🔍 No more users found with skill: “{skillFilter.trim().charAt(0).toUpperCase() + skillFilter.trim().slice(1)}”
         </h2>

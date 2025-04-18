@@ -29,6 +29,7 @@ const Privacy = () => {
       </h2>
       <p className="mb-4 text-base leading-relaxed">
         Your data helps us:
+        </p>
         <ul className="list-disc ml-6 mt-2">
           <li>Match you with relevant connections</li>
           <li>Improve platform features</li>
@@ -36,7 +37,7 @@ const Privacy = () => {
             Send important updates (e.g., connection requests, policy changes)
           </li>
         </ul>
-      </p>
+      
 
       <h2 className="text-xl font-semibold mt-8 mb-2">3. Data Protection</h2>
       <p className="mb-4 text-base leading-relaxed">

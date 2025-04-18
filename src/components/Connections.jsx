@@ -45,7 +45,7 @@ const Connections = () => {
     );
 
   return (
-    <div className="flex justify-center p-6 ">
+    <div className="flex justify-center items-center p-6 min-h-[75vh] ">
       <div className="w-full max-w-lg p-6 bg-white border-2 border-accent rounded-lg shadow-lg dark:bg-gray-900 ">
         {/* Header */}
         <div className="flex items-center justify-between mb-2">
@@ -78,6 +78,7 @@ const Connections = () => {
                     src={connection.photoUrl || "/default-profile.jpg"}
                     alt={connection.firstName}
                   />
+                  
 
                   {/* User Info */}
                   <div className="flex-1">
