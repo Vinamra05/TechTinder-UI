@@ -102,9 +102,9 @@ const Requests = () => {
         },
       }}
     />
-    <div className="flex justify-center min-h-[75vh] item center  p-6">
-      <div className="w-full max-w-lg p-6 bg-white border-2 border-accent rounded-lg shadow-lg dark:bg-gray-900 ">
-        <div className="flex items-center justify-between mb-4">
+    <div className="flex justify-center  item center  p-6">
+      <div className="w-full max-w-lg p-6   min-h-[75vh] bg-white border-2 border-accent rounded-lg shadow-lg dark:bg-gray-900 ">
+        <div className="flex items-center justify-between mb-4 ">
           <h5 className="text-2xl font-bold  dark:text-accent">
             Connections Requests
           </h5>
