@@ -26,13 +26,12 @@ const Connections = () => {
     fetchConnections();
   }, []);
 
-  if (!connections) return null;
-
+  if (!connections) return;
   if (connections?.length === 0)
     return (
       <div className="flex flex-col  min-h-[75vh]  items-center justify-center text-center mt-10">
         <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-          No Connection Requests Found
+          Ooh!! You Have No Connections Yet
         </h1>
         <p className="mt-2 text-gray-400 text-lg">
           Looks like you haven’t received any connection requests yet. Why not
