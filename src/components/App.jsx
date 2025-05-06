@@ -14,6 +14,7 @@ import { Toaster } from "react-hot-toast";
 import Privacy from "./Privacy";
 import Terms from "./Terms";
 import About from "./About";
+import Chat from "./Chat";
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
               <Route path="/privacy-policy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/about" element={<About />} />
+              <Route path="/chat/:targetUserId" element={<Chat />} />
             </Route>
           </Routes>
         </BrowserRouter>  

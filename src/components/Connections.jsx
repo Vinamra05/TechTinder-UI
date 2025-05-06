@@ -3,6 +3,8 @@ import { BASE_URL } from "../utils/Constants.js";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnection } from "../utils/connectionSlice.js";
+import { MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import "../index.css"; // Import your CSS file for animations
 
 const Connections = () => {
@@ -10,7 +12,6 @@ const Connections = () => {
   const connections = useSelector((store) => store.connections);
   const [showAll, setShowAll] = useState(false);
 
-  
   const fetchConnections = async () => {
     try {
       const res = await axios.get(BASE_URL + "/user/connections", {
@@ -38,7 +39,8 @@ const Connections = () => {
           take the first step?
         </p>
         <p className="mt-1 text-gray-400 text-md">
-          Start networking and send connection requests to grow your circle! 🌍✨
+          Start networking and send connection requests to grow your circle!
+          🌍✨
         </p>
       </div>
     );
@@ -48,7 +50,9 @@ const Connections = () => {
       <div className="w-full max-w-lg p-6 bg-white border-2 border-accent rounded-lg shadow-lg dark:bg-gray-900 ">
         {/* Header */}
         <div className="flex items-center justify-between mb-2">
-          <h5 className="text-2xl font-bold dark:text-accent">Your Connections</h5>
+          <h5 className="text-2xl font-bold dark:text-accent">
+            Your Connections
+          </h5>
 
           {connections.length > 5 && (
             <button
@@ -59,7 +63,7 @@ const Connections = () => {
             </button>
           )}
         </div>
-        
+
         {/* Connection List with Scroll or View All */}
         <div
           className={`overflow-y-auto ${
@@ -67,35 +71,46 @@ const Connections = () => {
           } custom-scrollbar`} // Increased height for better visibility
           style={{ paddingBottom: "20px" }} // Adds extra padding to prevent cutoff
         >
-          <ul role="list" className="divide-y divide-gray-300 dark:divide-gray-700">
-            {(showAll ? connections : connections.slice(0, 5)).map((connection, index) => (
-              <li key={index} className="py-4 animate-fadeIn">
-                <div className="flex items-center gap-4">
-                  {/* Profile Image */}
-                  <img
-                    className="w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600"
-                    src={connection.photoUrl || "/default-profile.jpg"}
-                    alt={connection.firstName}
-                  />
-                  
+          <ul
+            role="list"
+            className="divide-y divide-gray-300 dark:divide-gray-700"
+          >
+            {(showAll ? connections : connections.slice(0, 5)).map(
+              (connection, index) => (
+                <li key={connection._id} className="py-4 animate-fadeIn">
+                  <div className="flex items-center gap-4">
+                    {/* Profile Image */}
+                    <img
+                      className="w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600"
+                      src={connection?.photoUrl || null}
+                      alt={connection.firstName}
+                    />
 
-                  {/* User Info */}
-                  <div className="flex-1">
-                    <p className="text-lg font-semibold text-gray-900 dark:text-violet-500">
-                      {connection.firstName} {connection.lastName}
-                    </p>
+                    {/* User Info */}
+                    <div className="flex-1">
+                      <p className="text-lg font-semibold text-gray-900 dark:text-violet-500">
+                        {connection.firstName} {connection.lastName}
+                      </p>
 
-                    <p className="text-sm text-gray-600 dark:text-cyan-400">
-                      {connection.age} • {connection.gender}
-                    </p>
+                      <p className="text-sm text-gray-600 dark:text-cyan-400">
+                        {connection.age} • {connection.gender}
+                      </p>
 
-                    <p className="mt-1 text-sm text-gray-500 dark:text-white text-start">
-                      {connection.about}
-                    </p>
+                      <p className="mt-1 text-sm text-gray-500 dark:text-white text-start">
+                        {connection.about}
+                      </p>
+                    </div>
+                    <Link to={"/chat/" + connection._id}>
+                     
+                      <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-violet-600 hover:bg-violet-700 text-white text-sm font-medium transition duration-200 cursor-pointer">
+                        <MessageCircle className="w-4 h-4" />
+                        Chat
+                      </button>
+                    </Link>
                   </div>
-                </div>
-              </li>
-            ))}
+                </li>
+              )
+            )}
           </ul>
         </div>
       </div>
