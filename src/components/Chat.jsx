@@ -1,4 +1,4 @@
-import React, { use, useEffect , useRef } from "react";
+import React, {  useEffect , useRef } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -11,6 +11,7 @@ import { toast } from "react-hot-toast";
 const Chat = () => {
   const { targetUserId } = useParams();
   const chatContainerRef = useRef(null);
+  const socketRef = useRef(null);
   const [messages, setmessages] = useState([]);
   const [targetUserDetails, setTargetUserDetails] = useState({
     name: "",
@@ -82,27 +83,24 @@ const Chat = () => {
     if (!userId) {
       return;
     }
-    const socket = createSocketConnection();
+    // const socket = createSocketConnection();
+    socketRef.current = createSocketConnection(); // Create a socket connection
+    const socket = socketRef.current; // Get the socket instance
     socket.emit("joinChat", {
       firstName: user?.firstName,
       userId,
       targetUserId,
     }); // Join the chat room for the target user
 
-    socket.on("messageReceived", ({ firstName, lastName, text, time }) => {
-      console.log(firstName + ": " + text);
+    socket.on("messageReceived", ({ firstName, lastName, text, time,photoUrl }) => {
+      // console.log(firstName + ": " + text);
+      // console.log("Received photoUrl:", photoUrl);
       setmessages((prevMessages) => [
         ...prevMessages,
-        { firstName, lastName, text, time },
+        { firstName, lastName, text, time,photoUrl },
       ]); // Update the messages state with the received message
     });
-
-    socket.on("userOnline", (onlineUserId) => {
-      console.log("User online:", onlineUserId);
-      if (onlineUserId === targetUserId) {
-        setTargetUserDetails((prev) => ({ ...prev, online: true }));
-      }
-    });
+   
 
 
     socket.on("userOffline", (offlineUserId) => {
@@ -131,7 +129,9 @@ const Chat = () => {
 
   const handleSend = () => {
     if (newMessage.trim() === "") return;
-    const socket = createSocketConnection();
+    // const socket = createSocketConnection();
+    const socket = socketRef.current; // Get the socket instance
+
     socket.emit("sendMessage", {
       firstName: user?.firstName,
       lastName: user?.lastName,
@@ -143,6 +143,11 @@ const Chat = () => {
         minute: "2-digit",
       }),
     }); // Emit the message to the server
+
+   
+  
+
+
 
     // Prevent sending empty messages
     // console.log("Sending message:", newMessage);
@@ -159,9 +164,9 @@ const Chat = () => {
       }, 3000);
     });
 
-    setTimeout(() => {
-      socket.disconnect();
-    }, 1000);
+    // setTimeout(() => {
+    //   socket.disconnect();
+    // }, 1000);
 
     setNewMessage("");
   };
@@ -172,19 +177,7 @@ const Chat = () => {
         Your Private Chat
       </h2>
 
-      {/* <div className="text-center mb-2">
-        <span className="text-lg font-semibold text-white">
-          Chatting with: {targetUserDetails.name}
-        </span>
-        <br />
-        <span
-          className={`text-sm font-medium ${
-            targetUserDetails.online ? "text-green-400" : "text-gray-400"
-          }`}
-        >
-          {targetUserDetails.online ? "Online" : "Offline"}
-        </span>
-      </div> */}
+     
 
       {/* Chat Container */}
       <div ref={chatContainerRef} className="w-full max-w-2xl bg-gray-800 border-2 border-accent rounded-xl shadow-lg pl-2 pr-2 space-y-4 overflow-y-auto max-h-[65vh] custom-scrollbar">
