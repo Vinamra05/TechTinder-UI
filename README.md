@@ -12,7 +12,7 @@ This frontend repository provides the user interface, real-time chat experience,
 - User Authentication & Authorization integration with backend
 - Follow/Unfollow Functionality
 - Notifications system (real-time updates)
-- Premium features access after **Razorpay / Stripe** payment
+- Premium features access after **Razorpay** payment
 - State management using **Redux**
 - Interactive UI components using **Daisy UI**
 - Upcoming AI-powered features integration
@@ -23,8 +23,8 @@ This frontend repository provides the user interface, real-time chat experience,
 
 - **Frontend:** React.js, Redux, Tailwind CSS, Daisy UI  
 - **Real-Time Communication:** Socket.io  
-- **Payments:** Razorpay / Stripe (upcoming)  
-- **Deployment:** AWS / Netlify / Vercel  
+- **Payments:** Razorpay
+- **Deployment:** AWS  
 - **Version Control:** Git + GitHub
 
 ---
@@ -50,11 +50,11 @@ techTinder-frontend/
 Follow the steps below to set up the frontend locally 👇
 
 1️⃣ Clone the repository
-bash
+
 git clone https://github.com/vinamra05/techTinder-UI.git
 cd techTinder-frontend
 2️⃣ Install dependencies
-bash
+
 npm install
 3️⃣ Create a .env file
 Create a .env file in the root directory based on .env.example and add your environment variables:
@@ -64,8 +64,9 @@ REACT_APP_API_URL=http://localhost:5000
 REACT_APP_RAZORPAY_KEY=your_razorpay_key
 
 4️⃣ Run the app
-bash
+
 npm start
+npm run dev
 The app will start on:
 
 text
